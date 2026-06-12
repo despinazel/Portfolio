@@ -1,0 +1,6 @@
+{
+  "name": "Junior Portfolio Pro",
+  "description": "An interactive, highly polished junior UX/UI designer portfolio and Double Diamond case study showcasing the Fluffy Care onboarding flow with an embedded device simulator and AI design copilot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

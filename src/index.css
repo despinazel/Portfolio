@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-pet-teal: #2A7B88;
+  --color-primary: #00626e;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2a7b88;
+  --color-soft-indigo: var(--color-secondary);
+  --color-secondary: #4858ab;
+  --color-on-secondary: #ffffff;
+  
+  --color-white: #ffffff;
+  --color-pure-white: #ffffff;
+  --color-surface: #ffffff;
+  --color-on-surface: #191c1d;
+  --color-text-primary: #1A1C1E;
+  --color-text-secondary: #495057;
+  --color-on-surface-variant: #3f484a;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-subtle: #F1F3F5;
+  --color-outline-variant: #bec8ca;
+  --color-surface-variant: #e1e3e4;
+  --color-outline: #6f797b;
+  --color-secondary-container: #96a5ff;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-150: #eceeef;
+  --color-gray-200: #e5e7eb;
+}
+
+.dark {
+  --color-white: #16191b;
+  --color-pure-white: #ffffff;
+  --color-surface: #101214;
+  --color-on-surface: #e2e8f0;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-on-surface-variant: #cbd5e1;
+  --color-surface-container-low: #1d2024;
+  --color-surface-container-lowest: #131618;
+  --color-surface-subtle: #16191b;
+  --color-outline-variant: #2d3135;
+  --color-surface-variant: #282c30;
+  --color-outline: #64748b;
+  
+  --color-primary: #2a7b88;
+  --color-primary-container: #1b4e57;
+  --color-secondary: #5c6bc0;
+
+  --color-gray-50: #131618;
+  --color-gray-100: #1a1d21;
+  --color-gray-150: #24282c;
+  --color-gray-200: #2d3135;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  
+  --font-size-xs: 0.875rem; /* Minimum font size set to 14px */
+  --font-size-sm: 0.9375rem; /* 15px */
+  --font-size-base: 1.0625rem; /* 17px */
+  --font-size-lg: 1.1875rem; /* 19px */
+  --font-size-xl: 1.3125rem; /* 21px */
+  --font-size-2xl: 1.625rem; /* 26px */
+  --font-size-3xl: 2rem; /* 32px */
+  --font-size-4xl: 2.5rem; /* 40px */
+  --font-size-5xl: 3.25rem; /* 52px */
+  --font-size-6xl: 4rem; /* 64px */
+  
+  --color-pet-teal: var(--color-pet-teal);
+  --color-primary: var(--color-primary);
+  --color-on-primary: var(--color-on-primary);
+  --color-primary-container: var(--color-primary-container);
+  --color-soft-indigo: var(--color-soft-indigo);
+  --color-secondary: var(--color-secondary);
+  --color-on-secondary: var(--color-on-secondary);
+  
+  --color-white: var(--color-white);
+  --color-pure-white: var(--color-pure-white);
+  --color-surface: var(--color-surface);
+  --color-on-surface: var(--color-on-surface);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-on-surface-variant: var(--color-on-surface-variant);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container-lowest: var(--color-surface-container-lowest);
+  --color-surface-subtle: var(--color-surface-subtle);
+  --color-outline-variant: var(--color-outline-variant);
+  --color-surface-variant: var(--color-surface-variant);
+  --color-outline: var(--color-outline);
+  --color-secondary-container: var(--color-secondary-container);
+
+  --color-gray-50: var(--color-gray-50);
+  --color-gray-100: var(--color-gray-100);
+  --color-gray-150: var(--color-gray-150);
+  --color-gray-200: var(--color-gray-200);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.tonal-elevation {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.hero-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(42, 123, 136, 0.05) 0%, rgba(255, 255, 255, 1) 70%);
+}
+
+.dark .hero-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(42, 123, 136, 0.12) 0%, rgba(16, 18, 20, 1) 70%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Prevent Autofill from changing background fill color and text color of form inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset !important;
+  -webkit-text-fill-color: var(--color-on-surface) !important;
+  caret-color: var(--color-on-surface) !important;
+}
+
