@@ -528,7 +528,7 @@ export default function App() {
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     const saved = localStorage.getItem("theme");
     if (saved === "light" || saved === "dark") return saved;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "light";
   });
   const [activeView, setActiveView] = useState<"home" | "work" | "resume" | "fluffy-care">(() => {
     const saved = localStorage.getItem("activeView");
