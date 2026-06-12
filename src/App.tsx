@@ -22,6 +22,7 @@ import {
   Phone,
   Mail,
   Linkedin,
+  Github,
   Sun,
   Moon
 } from "lucide-react";
@@ -530,7 +531,7 @@ export default function App() {
   });
   const [activeView, setActiveView] = useState<"home" | "work" | "resume" | "fluffy-care">(() => {
     const saved = localStorage.getItem("activeView");
-    return (saved as "home" | "work" | "resume" | "fluffy-care") || "work";
+    return (saved as "home" | "work" | "resume" | "fluffy-care") || "home";
   });
 
   // Keep HTML class matching the active theme
@@ -824,6 +825,21 @@ export default function App() {
                   <p className="text-sm md:text-md font-bold text-secondary uppercase tracking-widest font-sans">
                     {t.heroSubtitle}
                   </p>
+                  
+                  <div className="flex flex-wrap gap-x-8 gap-y-3 text-on-surface-variant font-medium text-sm pt-1">
+                    <a href={`mailto:${t.resumeEmail}`} className="flex items-center gap-2 hover:text-secondary transition-colors">
+                      <Mail className="w-5 h-5 text-pet-teal" />
+                      <span>{t.resumeEmail}</span>
+                    </a>
+                    <a href={t.resumeLinkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-secondary transition-colors">
+                      <Linkedin className="w-5 h-5 text-pet-teal" />
+                      <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/despinazel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-secondary transition-colors">
+                      <Github className="w-5 h-5 text-pet-teal" />
+                      <span>GitHub</span>
+                    </a>
+                  </div>
                   
                   <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
                     {t.heroDesc}
@@ -1330,6 +1346,10 @@ export default function App() {
                         <Linkedin className="w-5 h-5 text-pet-teal" />
                         <span>LinkedIn</span>
                       </a>
+                      <a href="https://github.com/despinazel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-secondary transition-colors">
+                        <Github className="w-5 h-5 text-pet-teal" />
+                        <span>GitHub</span>
+                      </a>
                     </div>
                   </div>
 
@@ -1579,8 +1599,9 @@ export default function App() {
         </p>
         
         <div className="flex gap-6 items-center">
-          <a href={t.resumeLinkedin} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-on-surface hover:text-primary transition-all">LinkedIn</a>
           <a href={`mailto:${t.resumeEmail}`} className="text-xs font-bold text-on-surface hover:text-primary transition-all">Email</a>
+          <a href={t.resumeLinkedin} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-on-surface hover:text-primary transition-all">LinkedIn</a>
+          <a href="https://github.com/despinazel" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-on-surface hover:text-primary transition-all">GitHub</a>
         </div>
       </footer>
 
@@ -1753,11 +1774,21 @@ export default function App() {
             </form>
 
             {/* Email link fallback */}
-            <div className="bg-surface-subtle p-4 border-t border-outline-variant text-center">
+            <div className="bg-surface-subtle p-4 border-t border-outline-variant text-center space-y-2">
               <p className="text-xs text-on-surface-variant font-medium">
                 {lang === "GR" ? "Ή επικοινωνήστε απευθείας στο:" : "Or email directly at:"}{" "}
-                <strong className="text-pet-teal hover:underline"><a href="mailto:ux.zelelidoud@gmail.com">ux.zelelidoud@gmail.com</a></strong>
+                <strong className="text-pet-teal hover:underline"><a href={`mailto:${t.resumeEmail}`}>{t.resumeEmail}</a></strong>
               </p>
+              <div className="flex justify-center gap-6 text-xs font-bold text-on-surface-variant">
+                <a href={t.resumeLinkedin} target="_blank" rel="noopener noreferrer" className="hover:text-pet-teal flex items-center gap-1.5">
+                  <Linkedin className="w-3.5 h-3.5" />
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/despinazel" target="_blank" rel="noopener noreferrer" className="hover:text-pet-teal flex items-center gap-1.5">
+                  <Github className="w-3.5 h-3.5" />
+                  <span>GitHub</span>
+                </a>
+              </div>
             </div>
 
           </div>
