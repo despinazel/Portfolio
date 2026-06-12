@@ -30,6 +30,7 @@ import { MobileSimulator } from "./components/MobileSimulator";
 import { AiAssistant } from "./components/AiAssistant";
 import { FluffyCareCaseStudy } from "./components/FluffyCareCaseStudy";
 import { motion } from "motion/react";
+import { Analytics } from "@vercel/analytics/react";
 
 interface TranslationTexts {
   navLogo: string;
@@ -1798,6 +1799,7 @@ export default function App() {
 
 
 
+      <Analytics />
     </div>
   );
 }
